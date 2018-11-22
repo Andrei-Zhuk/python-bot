@@ -27,7 +27,7 @@ updater = Updater(token='709802155:AAGXZEVvNoT6FQL7JuU2SBw9L8j53UlGGG4')
 dispatcher = updater.dispatcher
 
 def startCommand(bot, update):
-    bot.send_message(chat_id=update.message.chat_id, text='Привет, давай пообщаемся?')
+    bot.send_message(chat_id=update.message.chat_id, text='РїСЂРёРІРµС‚, РґР°РІР°Р№ РїРѕРѕР±С‰Р°РµРјСЃСЏ?')
 def textMessage(bot, update):
     request = apiai.ApiAI('05fbecb26f1349e0892e2f61f5970a52').text_request()
     request.lang = 'ru'
@@ -39,7 +39,7 @@ def textMessage(bot, update):
     if response:
         bot.send_message(chat_id=update.message.chat_id, text=response)
     else:
-        bot.send_message(chat_id=update.message.chat_id, text='Я Вас не совсем понял!')
+        bot.send_message(chat_id=update.message.chat_id, text='РЇ Р’Р°СЃ РЅРµ СЃРѕРІСЃРµРј РїРѕРЅСЏР»!')
 
 start_command_handler = CommandHandler('start', startCommand)
 text_message_handler = MessageHandler(Filters.text, textMessage)
