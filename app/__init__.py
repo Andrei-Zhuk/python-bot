@@ -69,9 +69,3 @@ dispatcher.add_handler(start_command_handler)
 dispatcher.add_handler(text_message_handler)
 
 updater.start_polling(clean=True)
-
-if __name__ == '__main__':
-    app.run()
-
-updater.idle()
-
