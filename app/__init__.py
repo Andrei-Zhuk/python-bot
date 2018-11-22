@@ -11,13 +11,12 @@ def webhook():
     if request.method == 'POST' and request.headers['content-type'] == 'application/x-www-form-urlencoded':
         data = json.loads(request.form['payload'])
         print(data)
-        dispatcher.bot.send_message(chat_id=chats[0], text=getTravisMessage(data))
+        message = getTravisMessage(data)
+        sendToAllChats(message)
         return '', 200
     elif request.method == 'POST' and request.headers['content-type'] == 'application/json':
         data = json.loads(request.data)
         print(data)
-        message = getTravisMessage(data)
-        sendToAllChats(message)
         return '', 200
     else:
         abort(400)
