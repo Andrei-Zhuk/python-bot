@@ -25,7 +25,7 @@ def getTravisMessage(data):
     repo = data['repository']['name']
     type = data['type']
     state = data['state']
-    branch = data['config']['deploy'][0]['on']['branch'][0]
+    branch = data['branch']
     link = data['build_url']
     return 'Travis CI \n\n' + 'Repository: ' + repo + '\n' + 'The build of type ' + type + ' of ' + branch + ' branch ' + ' has changed state to ' + state + '\n' + 'Link: ' + link
 
