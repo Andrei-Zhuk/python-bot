@@ -18,7 +18,3 @@ def webhook():
         return '', 200
     else:
         abort(400)
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4567)
